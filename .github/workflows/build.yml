@@ -18,6 +18,10 @@ jobs:
         with:
           dotnet-version: '7.x' # atau versi .NET yang sesuai dengan proyek Anda
 
+      - name: Set VCTargetsPath
+        run: |
+          $env:VCTargetsPath="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\"
+
       - name: Restore dependencies
         run: dotnet restore Android_UEFIInstaller.sln # Ganti <NAMA_FILE> dengan nama file .sln Anda
 
