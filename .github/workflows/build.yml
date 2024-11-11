@@ -26,8 +26,8 @@ jobs:
         run: dotnet restore Android_UEFIInstaller.sln # Ganti <NAMA_FILE> dengan nama file .sln Anda
 
       - name: Build project
-        run: dotnet build Android_UEFIInstaller.sln --configuration Release --no-restore
-
+        run: msbuild Android_UEFIInstaller.sln /p:Configuration=Release
+        
       - name: Run tests
         run: dotnet test Android_UEFIInstaller.sln --no-build --verbosity normal
 
